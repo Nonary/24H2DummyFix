@@ -31,7 +31,12 @@ This script monitors Sunshine’s logs. If it detects a failure caused by the 24
 1. After extraction, locate the **Install.bat** file.
 2. Double-click **Install.bat** to set up the monitoring script.
 
-### Step 3: Adjust sunshine directory path in Settings (if required)
+### Step 3: Confirm the Extraction  
+1. After extracting the zip file, you should see a new folder named *24H2DummyFix* inside the *MonitorSwapper* folder.  
+2. If this folder is missing, the extraction was not done correctly.  
+3. Do not overwrite any files in MonitorSwapper. If you get overwrite warnings, you might be copying individual files from inside the zip instead of extracting the entire *24H2DummyFix* folder.
+
+### Step 4: Adjust sunshine directory path in Settings (if required)
 If you installed Sunshine in a different directory than the default, then you will need to edit the sunshineDirectory property in the settings.json file, make sure to escape the backslashes.
 
 ---

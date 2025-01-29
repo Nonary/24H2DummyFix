@@ -61,8 +61,8 @@ function Send-PipeMessage {
 function Handle-DuplicateOutputError {
 
     Write-Host "Detected that Sunshine could not start due to display issues, forcing dummy plug configuration."
+    Set-Location ..
 
-    Set-Location $settings.MonitorSwapperLocation
 
     & .\MonitorSwitcher.exe -load:Dummy.xml
 }
