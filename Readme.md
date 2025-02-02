@@ -47,5 +47,9 @@ If you installed Sunshine in a different directory than the default, then you wi
 
 ---
 
-## Troubleshooting
-Additional troubleshooting steps will be added here as issues are reported.
+### Change Log
+
+**v1.1**
+- Fixed a bug that prevented the script from being able to remediate the display more than once.
+
+

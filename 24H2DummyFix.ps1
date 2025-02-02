@@ -3,7 +3,7 @@ $path = Split-Path $MyInvocation.MyCommand.Path -Parent
 Set-Location $path
 
 # Load helper functions or configurations if any (assuming Helpers.ps1 exists)
-. .\Helpers.ps1 -n HybridGPUFix
+. .\Helpers.ps1 -n 24H2DummyFix
 
 # Load settings from a JSON file located in the same directory as the script
 $settings = Get-Settings
@@ -61,10 +61,9 @@ function Send-PipeMessage {
 function Handle-DuplicateOutputError {
 
     Write-Host "Detected that Sunshine could not start due to display issues, forcing dummy plug configuration."
-    Set-Location ..
 
+    & "..\MonitorSwitcher.exe" -load:..\Dummy.xml
 
-    & .\MonitorSwitcher.exe -load:Dummy.xml
 }
 function Monitor-LogFile {
     param (
