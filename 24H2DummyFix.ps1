@@ -65,6 +65,11 @@ function Handle-DuplicateOutputError {
     & "..\MonitorSwitcher.exe" -load:..\Dummy.xml
 
 }
+
+function Handle-NoDisplaysError {
+    Write-Host "Detected that Sunshine could not start due to no displays, forcing dummy plug configuration."
+    & "..\MonitorSwitcher.exe" -load:..\Dummy.xml
+}
 function Monitor-LogFile {
     param (
         [string]$logFilePath
@@ -144,10 +149,14 @@ function Process-LogLine {
 
     # Define patterns to detect relevant log entries
     $duplicateOutputErrorPattern = "Error: Failed to locate an output device"
+    $noDisplaysErrorPattern = "No display devices are active at the moment!"
     
 
     if ($line -match $duplicateOutputErrorPattern) {
         Handle-DuplicateOutputError
+    }
+    elseif ($line -match $noDisplaysErrorPattern) {
+        Handle-NoDisplaysError
     }
 }
 
