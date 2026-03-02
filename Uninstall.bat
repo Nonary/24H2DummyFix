@@ -1,9 +1,9 @@
 @echo off
 :: Uninstall.bat
-:: This script deletes the HybridGPUMonitorTask scheduled task
+:: This script deletes the 24H2DummyFix scheduled task
 
 :: Define the task name
-set taskName=HybridGPUMonitorTask
+set taskName=24H2DummyFix
 
 :: Check for Administrator privileges
 NET SESSION >nul 2>&1

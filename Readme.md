@@ -39,6 +39,12 @@ This script monitors Sunshine’s logs. If it detects a failure caused by the 24
 ### Step 4: Adjust sunshine directory path in Settings (if required)
 If you installed Sunshine in a different directory than the default, then you will need to edit the sunshineDirectory property in the settings.json file, make sure to escape the backslashes.
 
+### Uninstall
+To remove this workaround, run **Uninstall.bat** as Administrator.
+
+If `.bat` files are blocked on your system, run this command in an elevated PowerShell window:
+`Unregister-ScheduledTask -TaskName "24H2DummyFix" -Confirm:$false`
+
 ---
 
 ## Important Notes
@@ -51,5 +57,4 @@ If you installed Sunshine in a different directory than the default, then you wi
 
 **v1.1**
 - Fixed a bug that prevented the script from being able to remediate the display more than once.
-
 
